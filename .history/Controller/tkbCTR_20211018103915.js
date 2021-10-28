@@ -1,5 +1,0 @@
-const tkbCTR = {
-    getTkb(mssv){
-        
-    }
-}

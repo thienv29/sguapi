@@ -1,3 +1,0 @@
-const tkbCTR = {
-    getTkb
-}

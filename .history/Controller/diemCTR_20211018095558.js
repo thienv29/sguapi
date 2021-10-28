@@ -1,5 +1,0 @@
-const diemCTR = {
-    getDiemSv(mssv){
-  
-    }
-}
