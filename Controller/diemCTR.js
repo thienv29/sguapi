@@ -67,7 +67,7 @@ const diemCTR = {
                                 ).textContent;
                             listObjectDiem.push(diemso);
                         } catch (error) {
-                            console.log(error);
+                            res.send('error')
                         }
                     } else {
                         res.send(error);
