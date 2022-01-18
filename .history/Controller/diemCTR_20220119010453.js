@@ -191,7 +191,8 @@ const diemCTR = {
                                 dom.window.document.querySelectorAll(".row-diemTK")
                             );
                             listElement = listElement.slice(
-                                listElement.length - 6
+                                listElement.length - 6,
+                                listElement.length - 4
                             );
                             diemso.diemhe10 =
                                 listElement[0].querySelector(

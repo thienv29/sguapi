@@ -169,6 +169,7 @@ const diemCTR = {
     getDiemListSv(req, res, next) {
         const listMssv = req.body;
 
+        console.log(req);
         let listSuccess = [];
         let listErr = [];
         listMssv.forEach((mssv) => {
@@ -191,7 +192,8 @@ const diemCTR = {
                                 dom.window.document.querySelectorAll(".row-diemTK")
                             );
                             listElement = listElement.slice(
-                                listElement.length - 6
+                                listElement.length - 6,
+                                listElement.length - 4
                             );
                             diemso.diemhe10 =
                                 listElement[0].querySelector(
@@ -201,7 +203,7 @@ const diemCTR = {
                                 listElement[1].querySelector(
                                     ".Label:nth-child(2)"
                                 ).textContent;
-                            diemso.tichLuy10 =
+                                diemso.tichLuy10 =
                                 listElement[2].querySelector(".Label:nth-child(2)").textContent;
                             diemso.tichLuy4 =
                                 listElement[3].querySelector(".Label:nth-child(2)").textContent;

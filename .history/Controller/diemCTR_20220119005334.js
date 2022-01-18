@@ -19,21 +19,14 @@ const diemCTR = {
                         mssv: `${mssv}`,
                         diemhe10: "",
                         diemhe3: "",
-                        tichLuy10: "",
-                        tichLuy4: "",
-                        tinChiTichLuy: ""
+                        tichluy10:"",
+                        tichluy4
                     };
 
                     diemso.diemhe10 =
                         listElement[0].querySelector(".Label:nth-child(2)").textContent;
                     diemso.diemhe3 =
                         listElement[1].querySelector(".Label:nth-child(2)").textContent;
-                    diemso.tichLuy10 =
-                        listElement[2].querySelector(".Label:nth-child(2)").textContent;
-                    diemso.tichLuy4 =
-                        listElement[3].querySelector(".Label:nth-child(2)").textContent;
-                    diemso.tinChiTichLuy =
-                        listElement[5].querySelector(".Label:nth-child(2)").textContent;
                     res.send(diemso);
                 } else {
                     res.send(error);
@@ -41,7 +34,7 @@ const diemCTR = {
             }
         );
     },
-    getInfoListSv(req, res, next) {
+    getInfoListSv(req,res,next){
         const listMssv = req.body;
         let listSuccess = [];
         let listErr = [];
@@ -169,6 +162,7 @@ const diemCTR = {
     getDiemListSv(req, res, next) {
         const listMssv = req.body;
 
+        console.log(req);
         let listSuccess = [];
         let listErr = [];
         listMssv.forEach((mssv) => {
@@ -177,9 +171,7 @@ const diemCTR = {
                 id: mssv,
                 diemhe10: "",
                 diemhe3: "",
-                tichLuy10: "",
-                tichLuy4: "",
-                tinChiTichLuy: ""
+                
             };
             request(
                 `http://thongtindaotao.sgu.edu.vn/Default.aspx?page=xemdiemthi&id=${mssv}`,
@@ -191,7 +183,8 @@ const diemCTR = {
                                 dom.window.document.querySelectorAll(".row-diemTK")
                             );
                             listElement = listElement.slice(
-                                listElement.length - 6
+                                listElement.length - 6,
+                                listElement.length - 4
                             );
                             diemso.diemhe10 =
                                 listElement[0].querySelector(
@@ -201,13 +194,7 @@ const diemCTR = {
                                 listElement[1].querySelector(
                                     ".Label:nth-child(2)"
                                 ).textContent;
-                            diemso.tichLuy10 =
-                                listElement[2].querySelector(".Label:nth-child(2)").textContent;
-                            diemso.tichLuy4 =
-                                listElement[3].querySelector(".Label:nth-child(2)").textContent;
-                            diemso.tinChiTichLuy =
-                                listElement[5].querySelector(".Label:nth-child(2)").textContent;
-                            listSuccess.push(diemso);
+                                listSuccess.push(diemso);
                         } catch (error) {
                             listErr.push(mssv);
                             console.log("err2");
