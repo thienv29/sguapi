@@ -207,7 +207,7 @@ const diemCTR = {
             );
         });
         let checkRespon = setInterval(() => {
-            console.log("---------check record --------------")
+            console.log("---------check rea --------------")
 
             console.log(listSuccess.length);
             console.log(listErr.length);
